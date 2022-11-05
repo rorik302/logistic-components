@@ -1,0 +1,4 @@
+.eslintignore
+.husky/pre-commit
+package.json
+pnpm-lock.yaml
