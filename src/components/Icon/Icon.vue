@@ -1,9 +1,9 @@
 <template>
-  <Iconify :icon="iconValue" />
+  <Iconify :icon="iconValue" :class="rootClasses" />
 </template>
 
 <script setup lang="ts">
-  import { ref, watch } from "vue"
+  import { computed, ref, watch } from "vue"
   import { Icon as Iconify } from "@iconify/vue/dist/offline"
   import { loadIcon } from "@iconify/vue"
   import { icons, type IconType } from "@/components/Icon/types"
@@ -24,4 +24,14 @@
     },
     { immediate: true }
   )
+
+  const rootClasses = computed(() => ({
+    icon: true
+  }))
 </script>
+
+<style lang="scss">
+  .icon {
+    font-size: 2rem;
+  }
+</style>
