@@ -6,6 +6,7 @@
     <slot>
       {{ label }}
     </slot>
+    <Icon v-if="dropdown" icon="chevron-down" class="button__dropdown-icon" />
   </button>
 </template>
 
@@ -20,6 +21,7 @@
     color?: ButtonColor
     icon?: IconType
     variant?: ButtonVariant
+    dropdown?: boolean
   }
 
   const props = withDefaults(defineProps<ButtonProps>(), {
@@ -97,6 +99,9 @@
 
     &__icon {
       margin-right: 0.5rem;
+    }
+    &__dropdown-icon {
+      margin-left: 0.5rem;
     }
 
     &.button--default {
